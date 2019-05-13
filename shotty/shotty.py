@@ -28,7 +28,7 @@ def cli():
 
 @cli.group('snapshots')
 def snapshots():
-    """Commands for EC2 volume snaposhots"""
+    """Commands for EC2 volume snapshots"""
 
 @snapshots.command('list')
 @click.option('--project', default=None,
@@ -104,7 +104,7 @@ def create_snapshots(project):
             if has_pending_snapshots(v):
                 print(" Skipping {0}, sanpshot already in progress".format(v.id))
                 continue
-                
+
             print("Creating snapshot of {0}...".format(v.id))
             v.create_snapshot(Description="Created by SnapshotAlyzer-2019")
 
